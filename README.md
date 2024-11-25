@@ -122,7 +122,8 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
-![Screenshot (1953)](https://github.com/user-![Screenshot (1954)](https://github.com/user-attachments/assets/34a5deef-d898-4156-ba21-00ee09df514e)
-attachments/assets/d7b3930e-51a4-4d9e-9706-f75e94a8f2b1)
-![Screenshot (1955)](https://github.com/user-attachments/assets/c75cf855-adaf-47da-bbb6-8b6a5ec16623)
-![Screenshot (1956)](https://github.com/user-attachments/assets/c88c8694-773a-49a6-b3c2-03c8d948fd52)
+
+![Screenshot (1953)](https://github.com/user-attachments/assets/a9c35232-36e5-4c7c-909a-05987b4c282a)
+![Screenshot (1956)](https://github.com/user-attachments/assets/77aeea84-2665-48f5-b867-ca210c8e9c6e)
+![Screenshot (1955)](https://github.com/user-attachments/assets/31e080ba-cb59-43df-91b1-7522e632925e)
+![Screenshot (1954)](https://github.com/user-attachments/assets/efcc28a1-7f89-45d6-a067-68b91ae18f0c)
