@@ -50,7 +50,7 @@ const ChatBot = () => {
     <div className="min-h-screen flex flex-col items-center justify-between bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white">
       <div className="max-w-2xl w-full bg-gray-900 shadow-2xl rounded-lg p-6 flex flex-col h-[95vh]">
         <h2 className="text-4xl font-bold text-center text-blue-400 mb-4">
-          Addiction Chatbot
+          RehabBot
         </h2>
 
         {/* Chat History */}
