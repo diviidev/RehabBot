@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Navigate, useNavigate } from "react-router-dom";
 
 const ChatBot = () => {
   const [username, setUsername] = useState("");
@@ -10,11 +9,6 @@ const ChatBot = () => {
   const [error, setError] = useState("");
   const [rehabReport, setRehabReport] = useState("");
 
-  const navigate = useNavigate();
-
-  function display() {
-    navigate("/RehabReport");
-  }
   const handleUsernameChange = (e) => setUsername(e.target.value);
   const handleMessageChange = (e) => setUserMessage(e.target.value);
 
@@ -156,12 +150,12 @@ const ChatBot = () => {
             {loading ? "Loading..." : "Send Message"}
           </button>
 
-          {/* New Get Report Button */}
+          {/* Fetch Rehab Report Button */}
           <button
-            className="mt-3 w-full py-3 rounded-md text-white font-semibold bg-yellow-500 hover:bg-yellow-600 transition"
-            onClick={display}
+            onClick={fetchRehabReport}
+            className="mt-3 w-full py-3 rounded-md text-white font-semibold bg-green-500 hover:bg-green-600 transition"
           >
-            Get Report
+            Get Rehab Report
           </button>
         </div>
 
