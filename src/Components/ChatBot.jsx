@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Importing navigate hook
 import axios from "axios";
 
 const ChatBot = () => {
@@ -7,7 +8,8 @@ const ChatBot = () => {
   const [chatHistory, setChatHistory] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [rehabReport, setRehabReport] = useState("");
+
+  const navigate = useNavigate(); // Initialize navigate hook
 
   const handleUsernameChange = (e) => setUsername(e.target.value);
   const handleMessageChange = (e) => setUserMessage(e.target.value);
@@ -62,7 +64,9 @@ const ChatBot = () => {
       );
 
       const { rehab_program } = response.data;
-      setRehabReport(rehab_program);
+
+      // Redirecting to RehabReport page with data passed in state
+      navigate("/rehabreport", { state: { username, rehab_program } });
     } catch (err) {
       setError("Error fetching the rehab report from the server.");
       console.error(err);
@@ -115,7 +119,6 @@ const ChatBot = () => {
 
         {/* Message Input Section */}
         <div className="bg-gray-700 p-5 rounded-lg shadow-lg">
-          {/* Username Input */}
           <div className="mb-3">
             <input
               type="text"
@@ -126,7 +129,6 @@ const ChatBot = () => {
             />
           </div>
 
-          {/* Message Input */}
           <div className="mb-3">
             <textarea
               value={userMessage}
@@ -137,7 +139,6 @@ const ChatBot = () => {
             />
           </div>
 
-          {/* Send Button */}
           <button
             onClick={sendMessage}
             className={`w-full py-3 rounded-md text-white font-semibold ${
@@ -150,7 +151,7 @@ const ChatBot = () => {
             {loading ? "Loading..." : "Send Message"}
           </button>
 
-          {/* Fetch Rehab Report Button */}
+          {/* Get Rehab Report Button */}
           <button
             onClick={fetchRehabReport}
             className="mt-3 w-full py-3 rounded-md text-white font-semibold bg-green-500 hover:bg-green-600 transition"
@@ -159,22 +160,12 @@ const ChatBot = () => {
           </button>
         </div>
 
-        {/* Rehab Report Section */}
-        {rehabReport && (
-          <div className="mt-5 bg-gray-800 p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-bold text-green-400 mb-3">
-              Rehab Program Report:
-            </h3>
-            <p className="text-gray-300">{rehabReport}</p>
-          </div>
+        {error && (
+          <p className="mt-2 text-red-500 text-sm font-semibold text-center">
+            {error}
+          </p>
         )}
       </div>
-
-      {error && (
-        <p className="mt-2 text-red-500 text-sm font-semibold text-center">
-          {error}
-        </p>
-      )}
     </div>
   );
 };
